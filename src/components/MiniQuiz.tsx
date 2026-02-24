@@ -60,7 +60,7 @@ export function MiniQuiz({
             </p>
 
             {/* あなたの解答（不正解時のみ・控えめ） */}
-            {isWrong && (
+            {!isCorrect && (
               <div className="mb-2">
                 <p className="text-xs text-red-400 mb-0.5">あなたの解答</p>
                 <p className="text-sm text-red-400">
