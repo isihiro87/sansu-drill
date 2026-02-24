@@ -79,6 +79,7 @@ function App() {
           problems={problems}
           onComplete={handleComplete}
           onOpenExplanation={handleOpenExplanation}
+          onHome={handleRetry}
         />
       )}
       {screen === 'result' && (

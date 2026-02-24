@@ -10,6 +10,7 @@ interface QuizScreenProps {
   problems: Problem[];
   onComplete: (score: number, details: QuizDetail[]) => void;
   onOpenExplanation: (kind: ProblemKind) => void;
+  onHome: () => void;
 }
 
 function getChoiceState(
@@ -27,6 +28,7 @@ export function QuizScreen({
   problems,
   onComplete,
   onOpenExplanation,
+  onHome,
 }: QuizScreenProps) {
   const {
     currentIndex,
@@ -51,6 +53,17 @@ export function QuizScreen({
 
   return (
     <div className="flex flex-col gap-5 p-4 pt-6">
+      {/* ヘッダー */}
+      <div className="flex items-center justify-between">
+        <button
+          type="button"
+          onClick={onHome}
+          className="text-sm text-gray-400 hover:text-orange-500 font-bold cursor-pointer"
+        >
+          ← ホームにもどる
+        </button>
+      </div>
+
       <ProgressBar current={currentIndex} total={totalCount} />
 
       {/* 問題文 */}
